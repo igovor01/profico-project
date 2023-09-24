@@ -22,13 +22,8 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col h-screen justify-between">
         <Navbar />
-        <main className="flex flex-row h-screen justify-around items-center">
-          <LeftSidebar />
-          <section className="main-container">
-            <h1>Main</h1>
-            <div className="w-full max-w-4xl">{children}</div>
-          </section>
-          <RightSidebar />
+        <main className="h-screen">
+            {children}
         </main>
         <Footer />
       </body>
