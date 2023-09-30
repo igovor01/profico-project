@@ -8,8 +8,9 @@ function CurrentlyReadingAside() {
         CURRENTLY READING
       </span>
       <div className="whitespace-no-wrap overflow-hidden">
-        {BookItems.map((book) => (
+        {BookItems.map((book, index) => (
           <BookCurrentElement
+            key={index}
             title={book.title}
             author={book.author}
             src={book.src}

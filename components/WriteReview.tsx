@@ -44,6 +44,7 @@ export const WriteReview: React.FC<MyComponentProps> = ({ onSubmit }) => {
                     className="hidden"
                   />
                   <FaStar
+                    key={index}
                     className={
                       "cursor-pointer " +
                       (currentRating <= (hover || rating)
