@@ -2,6 +2,7 @@
 import React from "react";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface MyComponentProps {
   title: string;
@@ -23,7 +24,13 @@ function BookCurrentElement({ title, author, src }: MyComponentProps) {
   };
   return (
     <div className="flex flex-row py-4 relative">
-      <img src={src} className="w-24 pr-4 drop-shadow-xl"></img>
+      <Image
+        src={src}
+        width={100}
+        height={130}
+        alt="book image"
+        className="pr-4 drop-shadow-xl"
+      />
       <div className="flex flex-col space-y-1.5">
         <div>
           <p className="text-sm font-medium">{title}</p>

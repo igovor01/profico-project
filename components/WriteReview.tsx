@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import { FaStar, FaRegStar } from "react-icons/fa";
 
 export interface MyComponentProps {
@@ -21,7 +22,13 @@ export const WriteReview: React.FC<MyComponentProps> = ({ onSubmit }) => {
   return (
     <form onSubmit={handleAddPost} className="w-full bg-white rounded-md p-2.5">
       <div className="user-profile flex items-center">
-        <img src="/user-svg.svg" className="w-8 rounded-full mx-5 mt-2" />
+        <Image
+          src="/user-svg.svg"
+          alt="user image"
+          width={32}
+          height={32}
+          className="rounded-full mx-5 mt-2"
+        />
         <div>
           <p className="font-semibold">Jane Doe</p>
           <div className="card-star-container flex">

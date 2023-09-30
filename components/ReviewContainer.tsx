@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { FaRegHeart, FaRegComments, FaRegBookmark } from "react-icons/fa";
+import Image from "next/image";
 
 import { FaStar } from "react-icons/fa";
 
@@ -32,7 +33,13 @@ export const ReviewContainer: React.FC<ReviewContainerProps> = ({ review }) => {
       data-post-id={review.id}
     >
       <div className="user-profile flex items-center">
-        <img src="/user-svg.svg" className="w-8 rounded-full mx-5 mt-2" />
+        <Image
+          src="/user-svg.svg"
+          alt="user image"
+          width={32}
+          height={32}
+          className="rounded-full mx-5 mt-2"
+        />
         <div>
           <div className="flex space-x-1.5">
             <p className="font-semibold">Jane Doe</p>
@@ -61,8 +68,11 @@ export const ReviewContainer: React.FC<ReviewContainerProps> = ({ review }) => {
         </div>
         <p className="post-text my-3.5 text-base">{review.text}</p>
         <div className="book-details border p-5 flex mt-5">
-          <img
+          <Image
             src="/assets/images/book-1.jpg"
+            height={144}
+            width={100}
+            alt="book image"
             className="post-img mr-5 w-28 h-36 border border-orange-950 "
           />
           <div className="flex flex-col justify-items-start ">
@@ -99,9 +109,12 @@ export const ReviewContainer: React.FC<ReviewContainerProps> = ({ review }) => {
       </div>
       <div className="comment-input-container pl-5 pt-5 hidden">
         <div className="user-profile flex items-center">
-          <img
-            src="images/profile-pic.jpg"
-            className="w-6 rounded-full mx-5 mt-2"
+          <Image
+            src="/user-svg.svg"
+            alt="user image"
+            width={32}
+            height={32}
+            className="rounded-full mx-5 mt-2"
           />
           <p className="font-semibold">Jane Doe</p>
         </div>
@@ -121,7 +134,13 @@ export const ReviewContainer: React.FC<ReviewContainerProps> = ({ review }) => {
         <div className="comment-feed">
           <article className="comment-container" data-comment-id="">
             <div className="user-profile flex items-center">
-              <img src="" className="w-8 rounded-full mx-5 mt-2" />
+              <Image
+                src=""
+                alt="user image"
+                width={32}
+                height={32}
+                className="rounded-full mx-5 mt-2"
+              />
               <p className="font-semibold"></p>
             </div>
             <p className="comment-text my-3.5 text-base "></p>
