@@ -53,7 +53,7 @@ export const ReviewContainer: React.FC<ReviewContainerProps> = ({ review }) => {
         <div className="card-star-container  flex cursor-pointer mt-2.5">
           {[...Array(5)].map((star, index) => {
             return (
-              <label>
+              <label key={index}>
                 <FaStar
                   className={
                     "cursor-pointer " +

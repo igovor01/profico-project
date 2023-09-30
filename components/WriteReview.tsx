@@ -35,7 +35,7 @@ export const WriteReview: React.FC<MyComponentProps> = ({ onSubmit }) => {
             {[...Array(5)].map((star, index) => {
               const currentRating = index + 1;
               return (
-                <label>
+                <label key={index}>
                   <input
                     type="radio"
                     name="starRating"
@@ -44,7 +44,6 @@ export const WriteReview: React.FC<MyComponentProps> = ({ onSubmit }) => {
                     className="hidden"
                   />
                   <FaStar
-                    key={index}
                     className={
                       "cursor-pointer " +
                       (currentRating <= (hover || rating)
