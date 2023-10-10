@@ -20,9 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <body className="flex flex-col h-screen w-screen bg-gray-100">
+      <body className="relative">
         <Navbar />
-        <main className="h-screen">{children}</main>
+        <main className="">{children}</main>
         <Footer />
       </body>
     </html>

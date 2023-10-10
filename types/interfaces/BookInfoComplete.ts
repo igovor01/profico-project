@@ -5,4 +5,6 @@ export default interface BookInfoSmall {
   publishedDate: string;
   textSnippet: string;
   thumbnail: string;
+  categories: string[];
+  pageCount: number;
 }
