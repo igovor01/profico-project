@@ -10,7 +10,10 @@ interface ResultSectionProps {
   searchMode: SearchMode;
 }
 
-export const ResultSection = ({ searchValue, searchMode }: ResultSectionProps) => {
+export const ResultSection = ({
+  searchValue,
+  searchMode,
+}: ResultSectionProps) => {
   const [results, setResults] = useState<BookInfo[]>([]);
   const key = process.env.NEXT_PUBLIC_BOOK_API_KEY as string;
 
@@ -81,7 +84,9 @@ export const ResultSection = ({ searchValue, searchMode }: ResultSectionProps) =
     >
       <h1 className="font-bold sm:w-10/12 mb-6 text-base md:text-lg text-center">
         Search results for{" "}
-        <span>{searchMode.label == "Everything" ? "" : searchMode.label + ": "}</span>
+        <span>
+          {searchMode.label == "Everything" ? "" : searchMode.label + ": "}
+        </span>
         <span className="italic">&quot;{searchValue}&quot;</span>
       </h1>
       <div className="w-full py-8 px-4">

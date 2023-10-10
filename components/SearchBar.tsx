@@ -29,7 +29,7 @@ export const SearchBar = ({
 
   const handleSearchClick = () => {
     setInput("");
-    setCurrentSearchMode(searchMode)
+    setCurrentSearchMode(searchMode);
     setResults([]);
     setSearchValue(input);
     toggleResultSection();
@@ -136,7 +136,7 @@ export const SearchBar = ({
         >
           {SearchModeList.map((item) => (
             <li
-            key={item.modeKeyword}
+              key={item.modeKeyword}
               onClick={() => changeSearchMode(item)}
               className="text-sm font-medium py-4 pl-6 cursor-pointer hover:ml-2 hover:text-orange-500 transition-all ease-in duration-200 "
             >

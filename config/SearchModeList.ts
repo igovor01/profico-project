@@ -13,6 +13,6 @@ export const SearchModeList = [
   },
   {
     modeKeyword: "subject",
-    label: "Category"
+    label: "Category",
   },
 ];

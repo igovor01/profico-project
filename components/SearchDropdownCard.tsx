@@ -16,7 +16,9 @@ export const SearchDropdownCard = ({ result }: SearchDropdownCardProps) => {
         className="pr-4 drop-shadow-xl"
       />
       <div className="">
-        <p className="text-lg font-bold block overflow-hidden text-ellipsis m-0 overflow-wrap text-ellipsis">{result.title}</p>
+        <p className="text-lg font-bold block overflow-hidden text-ellipsis m-0 overflow-wrap text-ellipsis">
+          {result.title}
+        </p>
         <p className="text-sm font-normal block overflow-hidden text-ellipsis mb-1 mt-1 text-slate-500 overflow-wrap text-ellipsis">
           by{" "}
           {result.authors.map((author, index) => {

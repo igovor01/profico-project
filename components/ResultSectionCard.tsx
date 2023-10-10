@@ -43,7 +43,10 @@ export const ResultSectionCard = ({ result }: ResultSectionCardProps) => {
           {result.categories &&
             result.categories.map((author) => {
               return (
-                <div className="inline-flex py-1.5 px-4 bg-orange-200 rounded-full text-center font-semibold text-xs mr-0.5 mt-1">
+                <div
+                  key={author}
+                  className="inline-flex py-1.5 px-4 bg-orange-200 rounded-full text-center font-semibold text-xs mr-0.5 mt-1"
+                >
                   {author}
                 </div>
               );
