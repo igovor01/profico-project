@@ -7,7 +7,6 @@ import axios from "axios";
 import React from "react";
 
 const Book = () => {
-  const router = useRouter();
   const { id } = useParams();
   console.log(id);
   const key = process.env.NEXT_PUBLIC_BOOK_API_KEY as string;
