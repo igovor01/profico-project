@@ -19,6 +19,7 @@ export const ResultSectionCard = ({ result }: ResultSectionCardProps) => {
           className="mr-8 rounded-md shadow-md hover:shadow-lg hover:-translate-y-16 hover:scale-110 transition-all duration-200 -translate-y-14"
         />
       </Link>
+
       <div className="basis-3/4">
         <Link href={`/book/${result.id}`}>
           <p className="text-xl font-black block overflow-hidden text-ellipsis m-0">
