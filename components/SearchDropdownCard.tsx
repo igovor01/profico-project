@@ -7,15 +7,15 @@ interface SearchDropdownCardProps {
 
 export const SearchDropdownCard = ({ result }: SearchDropdownCardProps) => {
   return (
-    <div className="py-2.5 px-5 text-start bg-orange-200 hover:bg-slate-200 flex flex-row py-4 cursor-pointer relative">
+    <div className="w-full py-2.5 px-5 text-start bg-white hover:bg-slate-200 flex flex-row py-4 cursor-pointer relative">
       <Image
         src={result.thumbnail}
         width={100}
         height={130}
         alt="book image"
-        className="pr-4 drop-shadow-xl"
+        className="pr-4 drop-shadow-xl basis-1/6 h-max"
       />
-      <div className="">
+      <div className="basis-5/6">
         <p className="text-lg font-bold block overflow-hidden text-ellipsis m-0 overflow-wrap text-ellipsis">
           {result.title}
         </p>

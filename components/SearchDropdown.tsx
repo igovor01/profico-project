@@ -8,7 +8,7 @@ interface SearchDropdownProps {
 
 export const SearchDropdown = ({ results }: SearchDropdownProps) => {
   return (
-    <div className="w-fit bg-white flex flex-col shadow-sm rounded-md mt-4 max-h-80 overflow-y-scroll absolute block">
+    <div className="w-full max-w-xl bg-white flex flex-col shadow-sm rounded-md mt-4 max-h-80 overflow-y-scroll absolute">
       {results.map((result) => {
         return <SearchDropdownCard key={result.id} result={result} />;
       })}

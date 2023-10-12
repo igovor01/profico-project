@@ -112,7 +112,7 @@ export const SearchBar = ({
 
   return (
     <div className="w-fit flex bg-white min-w-max items-center rounded-full block">
-      <div className="relative w-72 rounded-full border border-white bg-purple-500 shadow-orange-950 cursor-pointer">
+      <div className="relative w-72 rounded-full border border-white bg-violet-900 shadow-orange-950 cursor-pointer z-10">
         <div
           onClick={() => toggleOpen(!isOpen)}
           className="flex items-center justify-between text-base font-medium text-white py-4 px-6"
@@ -146,7 +146,7 @@ export const SearchBar = ({
         </ul>
       </div>
 
-      <div className="flex items-center pr-4 w-full text-orange-500">
+      <div className="flex items-center pr-4 w-full text-violet-900">
         <input
           type="text"
           value={input}
@@ -155,7 +155,7 @@ export const SearchBar = ({
               ? "Search anything..."
               : `Search for ${searchMode.label}...`
           }
-          className="p-4 w-full text-base font-medium border-none outline-none placeholder:italic placeholder:text-orange-400"
+          className="p-4 w-full text-base font-medium border-none outline-none placeholder:italic placeholder:text-violet-200"
           onChange={(e) => handleChange(e.target.value)}
         />
         <FaSearch
