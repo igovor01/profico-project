@@ -15,7 +15,6 @@ export const ResultSection = ({
   searchValue,
   searchMode,
 }: ResultSectionProps) => {
-  //const [results, setResults] = useState<BookInfo[]>([]);
   const { books, isLoading, error } = useBooks(
     searchMode,
     searchValue,

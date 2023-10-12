@@ -35,8 +35,17 @@ export const SearchBar = ({
     setSearchMode({
       modeKeyword: "",
       label: "Everything",
-    })
+    });
     toggleResultSection();
+  };
+
+  const handleChange = (value: string) => {
+    setInput(value);
+    if (value != "") {
+      fetchSearchedBooks(value);
+    } else {
+      setResults([]);
+    }
   };
 
   const fetchSearchedBooks = async (value: string) => {
@@ -49,16 +58,12 @@ export const SearchBar = ({
         key +
         "&maxResults=" +
         MAX_RESULTS_SEARCH_BAR;
-      const response = await axios.get(
-        url
-        //`https://www.googleapis.com/books/v1/volumes?q=${value}&key=${key}&maxResults=${MAX_RESULTS_SEARCH_BAR}`
-      );
-      console.log(response.data.items);
+
+      const response = await axios.get(url);
       const items = response.data?.items || [];
-      console.log(items);
+
       const filteredBookData: BookInfo[] = items
         .filter((item: any) => {
-          console.log("okay");
           return (
             item &&
             item.volumeInfo.title &&
@@ -70,7 +75,6 @@ export const SearchBar = ({
           );
         })
         .map((book: any) => {
-          console.log("okay2");
           let imgSrc: string;
           if (book?.volumeInfo?.imageLinks != undefined) {
             imgSrc = book.volumeInfo.imageLinks.thumbnail;
@@ -88,20 +92,10 @@ export const SearchBar = ({
             pageCount: book?.volumeInfo?.pageCount || null,
           };
         });
-      console.log(filteredBookData[0]);
 
       setResults(filteredBookData);
     } catch (error) {
       console.error("Error:", error);
-    }
-  };
-
-  const handleChange = (value: string) => {
-    setInput(value);
-    if (value != "") {
-      fetchSearchedBooks(value);
-    } else {
-      setResults([]);
     }
   };
 
@@ -130,6 +124,7 @@ export const SearchBar = ({
             }
           />
         </div>
+
         <ul
           className={
             "absolute top-16 left-0 w-full rounded-2xl bg-white text-left overflow-hidden " +
