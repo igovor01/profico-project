@@ -32,6 +32,10 @@ export const SearchBar = ({
     setCurrentSearchMode(searchMode);
     setResults([]);
     setSearchValue(input);
+    setSearchMode({
+      modeKeyword: "",
+      label: "Everything",
+    })
     toggleResultSection();
   };
 
@@ -164,22 +168,5 @@ export const SearchBar = ({
         />
       </div>
     </div>
-    /* <div className="search flex items-center justify-center bg-white rounded-md w-full">
-      <input
-        type="text"
-        placeholder="Enter Your Book Name"
-        className="outline-none border-none w-80 h-9 py-0 px-2.5 text-base font-bold"
-        value={input}
-        onChange={(e) => handleChange(e.target.value)}
-      />
-      <Link href="#searchResults">
-        <button
-          className="outline-none border-none h-9 py-0 px-2.5 bg-white"
-          onClick={handleSearchClick}
-        >
-          <FaSearch />
-        </button>
-      </Link>
-    </div>*/
   );
 };

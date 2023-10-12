@@ -3,7 +3,7 @@ import { ResultSectionCard } from "./ResultSectionCard";
 import BookInfo from "@/types/interfaces/BookInfo";
 import axios from "axios";
 import SearchMode from "@/types/interfaces/SearchMode";
-import { MAX_RESULTS, SEARCH_URL } from "@/config/constants";
+import { MAX_RESULTS } from "@/config/constants";
 import useBooks from "@/hooks/useBooks";
 
 interface ResultSectionProps {
@@ -16,7 +16,6 @@ export const ResultSection = ({
   searchMode,
 }: ResultSectionProps) => {
   //const [results, setResults] = useState<BookInfo[]>([]);
-  const key = process.env.NEXT_PUBLIC_BOOK_API_KEY as string;
   const { books, isLoading, error } = useBooks(
     searchMode,
     searchValue,
@@ -37,8 +36,8 @@ export const ResultSection = ({
       </h1>
       <div className="w-full py-8 px-4">
         {!isLoading ? (
-          books.map((result, id) => (
-            <ResultSectionCard key={result.id} result={result} />
+          books.map((book) => (
+            <ResultSectionCard key={book.id} {...book} />
           ))
         ) : (
           <div className="flex items-center justify-center h-screen">

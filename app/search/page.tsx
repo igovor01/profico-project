@@ -16,6 +16,7 @@ export default function Search() {
     modeKeyword: "",
     label: "Everything",
   });
+  const [isSearchDropdownOpen, setSearchDropdownOpen] = useState(false)
 
   const toggleResultSection = () => {
     if (!isResultSectionVisible)

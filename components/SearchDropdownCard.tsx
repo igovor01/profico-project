@@ -1,15 +1,12 @@
 import Image from "next/image";
 import BookInfo from "@/types/interfaces/BookInfo";
 
-interface SearchDropdownCardProps {
-  result: BookInfo;
-}
 
-export const SearchDropdownCard = ({ result }: SearchDropdownCardProps) => {
+export const SearchDropdownCard = ({ thumbnail, title, authors }: BookInfo) => {
   return (
     <div className="w-full py-2.5 px-5 text-start bg-white hover:bg-slate-200 flex flex-row py-4 cursor-pointer relative">
       <Image
-        src={result.thumbnail}
+        src={thumbnail}
         width={100}
         height={130}
         alt="book image"
@@ -17,11 +14,11 @@ export const SearchDropdownCard = ({ result }: SearchDropdownCardProps) => {
       />
       <div className="basis-5/6">
         <p className="text-lg font-bold block overflow-hidden text-ellipsis m-0 overflow-wrap text-ellipsis">
-          {result.title}
+          {title}
         </p>
         <p className="text-sm font-normal block overflow-hidden text-ellipsis mb-1 mt-1 text-slate-500 overflow-wrap text-ellipsis">
           by{" "}
-          {result.authors.map((author, index) => {
+          {authors.map((author, index) => {
             return (index ? ", " : "") + author;
           })}
         </p>

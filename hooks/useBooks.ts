@@ -1,83 +1,10 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { SEARCH_URL } from "@/config/constants";
 import SearchMode from "@/types/interfaces/SearchMode";
 import BookInfo from "@/types/interfaces/BookInfo";
 import axios from "axios";
 
 const key = process.env.NEXT_PUBLIC_BOOK_API_KEY as string;
-
-/* const SearchResultItems = [
-  {
-    id: "321",
-    volumeInfo: {
-      title: "Something",
-      authors: ["Some autor"],
-      imageLinks: {
-        thumbnail: "/assets/images/pic.jpg",
-      },
-      textSnippet: "TextSnippet",
-      publishedDate: "2023/1/10",
-      categories: ["SomeCategory"],
-      pageCount: "234",
-    },
-  },
-  {
-    id: "322",
-    volumeInfo: {
-      title: "Something",
-      authors: ["Some autor"],
-      imageLinks: {
-        thumbnail: "/assets/images/pic.jpg",
-      },
-      textSnippet: "TextSnippet",
-      publishedDate: "2023/1/10",
-      categories: ["SomeCategory"],
-      pageCount: "234",
-    },
-  },
-  {
-    id: "323",
-    volumeInfo: {
-      title: "Something",
-      authors: ["Some autor"],
-      imageLinks: {
-        thumbnail: "/assets/images/pic.jpg",
-      },
-      textSnippet: "TextSnippet",
-      publishedDate: "2023/1/10",
-      categories: ["SomeCategory"],
-      pageCount: "234",
-    },
-  },
-  {
-    id: "324",
-    volumeInfo: {
-      title: "Something",
-      authors: ["Some autor"],
-      imageLinks: {
-        thumbnail: "/assets/images/pic.jpg",
-      },
-      textSnippet: "TextSnippet",
-      publishedDate: "2023/1/10",
-      categories: ["SomeCategory"],
-      pageCount: "234",
-    },
-  },
-  {
-    id: "325",
-    volumeInfo: {
-      title: "Something",
-      authors: ["Some autor"],
-      imageLinks: {
-        thumbnail: "/assets/images/pic.jpg",
-      },
-      textSnippet: "TextSnippet",
-      publishedDate: "2023/1/10",
-      categories: ["SomeCategory"],
-      pageCount: "234",
-    },
-  },
-]; */
 
 const useBooks = (
   searchMode: SearchMode,
@@ -105,11 +32,8 @@ const useBooks = (
       if (!response) {
         throw new Error("Something went wrong while fetching books");
       }
-      console.log("here");
-      console.log(response.data.items);
       const data = response.data;
       const items = data?.items || [];
-      console.log(response.data.items);
       const filteredBookData: BookInfo[] = items
         .filter((item: any) => {
           return (
