@@ -6,9 +6,11 @@ import { NavbarItems } from "@/config/NavbarItems";
 import { FaRegUserCircle } from "react-icons/fa";
 import { HiMenu } from "react-icons/hi";
 import React, { useState, useEffect } from "react";
+
 function Navbar() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const pathname = usePathname();
+
   useEffect(() => {
     setDropdownOpen(false);
   }, [pathname]);
@@ -16,6 +18,7 @@ function Navbar() {
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
+
   return (
     <nav className="bg-orange-50 border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
