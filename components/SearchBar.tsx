@@ -19,6 +19,7 @@ export const SearchBar = ({
   toggleResultSection,
   setCurrentSearchMode,
 }: SearchBarProps) => {
+  
   const [input, setInput] = useState("");
   const [isOpen, toggleOpen] = useState(false);
   const [searchMode, setSearchMode] = useState<SearchMode>({

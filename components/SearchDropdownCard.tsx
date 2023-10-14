@@ -3,6 +3,7 @@ import BookInfo from "@/types/interfaces/BookInfo";
 
 
 export const SearchDropdownCard = ({ thumbnail, title, authors }: BookInfo) => {
+  
   return (
     <div className="w-full py-2.5 px-5 text-start bg-white hover:bg-slate-200 flex flex-row py-4 cursor-pointer relative">
       <Image

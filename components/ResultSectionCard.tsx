@@ -3,11 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import BookInfo from "@/types/interfaces/BookInfo";
 
-/* interface ResultSectionCardProps {
-  result: BookInfo;
-} */
-
 export const ResultSectionCard = ({ id, thumbnail, title, authors, pageCount, publishedDate, categories }: BookInfo) => {
+  
   return (
     <article className="flex m-4 p-8 rounded-3xl flex-1 bg-gradient-to-b from-orange-100 to-white">
       <Link href={`/book/${id}`}>

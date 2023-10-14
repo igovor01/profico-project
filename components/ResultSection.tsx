@@ -15,6 +15,7 @@ export const ResultSection = ({
   searchValue,
   searchMode,
 }: ResultSectionProps) => {
+  
   const { books, isLoading, error } = useBooks(
     searchMode,
     searchValue,
