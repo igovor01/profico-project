@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 interface MyComponentProps {
@@ -22,6 +22,7 @@ function BookCurrentElement({ title, author, src }: MyComponentProps) {
     const newProgress = parseInt(e.target.value, 10);
     setProgress(newProgress);
   };
+
   return (
     <div className="flex flex-row py-4 relative">
       <Image

@@ -1,4 +1,6 @@
-export const BookItems = [
+import BookItem from "@/types/interfaces/BookItem";
+
+export const BookItems: BookItem[] = [
   {
     src: "/assets/images/book-1.jpg",
     title: "Pride and Prejudice",

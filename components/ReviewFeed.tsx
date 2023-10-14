@@ -11,10 +11,10 @@ interface ReviewFeedProps {
 }
 export const ReviewFeed: React.FC<ReviewFeedProps> = ({ reviews }) => {
   return (
-    <div>
+    <>
       {reviews.map((review, index) => (
-        <ReviewContainer key={index} review={review} />
+        <ReviewContainer key={index} {...review} />
       ))}
-    </div>
+    </>
   );
 };

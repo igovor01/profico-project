@@ -13,10 +13,12 @@ interface Review {
 
 export default function Home() {
   const [reviews, setReviews] = useState<Review[]>([]);
+
   const handleAddPost = (text: string, rating: number) => {
     const newReview = { id: Date.now(), text, rating };
     setReviews([...reviews, newReview]);
   };
+
   return (
     <div className="flex px-60">
       <CurrentlyReadingAside />
