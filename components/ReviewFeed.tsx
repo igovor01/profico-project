@@ -1,10 +1,5 @@
 import ReviewContainer from "./ReviewContainer";
-
-interface Review {
-  id: number;
-  text: string;
-  rating: number;
-}
+import Review from "@/types/interfaces/Review";
 
 interface ReviewFeedProps {
   reviews: Review[];

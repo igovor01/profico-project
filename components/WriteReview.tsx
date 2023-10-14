@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { StarInputContainer } from "./StarInputContainer";
 
-export interface MyComponentProps {
+export interface WriteReviewProps {
   onSubmit: (text: string, rating: number) => void;
 }
 
-export const WriteReview: React.FC<MyComponentProps> = ({ onSubmit }) => {
+export const WriteReview: React.FC<WriteReviewProps> = ({ onSubmit }) => {
   const [text, setText] = useState<string>("");
   const [rating, setRating] = useState<number>(0);
 

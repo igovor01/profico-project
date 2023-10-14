@@ -4,13 +4,13 @@ import React from "react";
 import { useState } from "react";
 import Image from "next/image";
 
-interface MyComponentProps {
+interface BookCurrentProps {
   title: string;
   author: string;
   src: string;
 }
 
-function BookCurrentElement({ title, author, src }: MyComponentProps) {
+function BookCurrentElement({ title, author, src }: BookCurrentProps) {
   const [progress, setProgress] = useState(0);
   const [isInputVisible, setInputVisible] = useState(false);
 

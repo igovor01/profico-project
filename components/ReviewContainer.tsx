@@ -1,15 +1,9 @@
 "use client";
-import { useState } from "react";
 import { FaRegHeart, FaRegComments, FaRegBookmark } from "react-icons/fa";
 import Image from "next/image";
 
 import { StarContainer } from "./StarContainer";
-
-interface Review {
-  id: number;
-  text: string;
-  rating: number;
-}
+import Review from "@/types/interfaces/Review";
 
 export const ReviewContainer = ({ id, text, rating }: Review) => {
   const date: Date = new Date();
