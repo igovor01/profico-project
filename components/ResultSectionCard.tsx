@@ -3,8 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import BookInfo from "@/types/interfaces/BookInfo";
 
-export const ResultSectionCard = ({ id, thumbnail, title, authors, pageCount, publishedDate, categories }: BookInfo) => {
-  
+export const ResultSectionCard = ({
+  id,
+  thumbnail,
+  title,
+  authors,
+  pageCount,
+  publishedDate,
+  categories,
+}: BookInfo) => {
   return (
     <article className="flex m-4 p-8 rounded-3xl flex-1 bg-gradient-to-b from-orange-100 to-white">
       <Link href={`/book/${id}`}>
@@ -38,17 +45,14 @@ export const ResultSectionCard = ({ id, thumbnail, title, authors, pageCount, pu
         </button>
 
         <div className="mt-3 mb-4">
-          {categories &&
-            categories.map((category) => {
-              return (
-                <div
-                  key={category}
-                  className="inline-flex py-1.5 px-4 bg-orange-200 rounded-full text-center font-semibold text-xs mr-0.5 mt-1"
-                >
-                  {category}
-                </div>
-              );
-            })}
+          {categories?.map((category) => (
+            <div
+              key={category}
+              className="inline-flex py-1.5 px-4 bg-orange-200 rounded-full text-center font-semibold text-xs mr-0.5 mt-1"
+            >
+              {category}
+            </div>
+          ))}
         </div>
       </div>
     </article>

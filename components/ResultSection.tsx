@@ -15,7 +15,6 @@ export const ResultSection = ({
   searchValue,
   searchMode,
 }: ResultSectionProps) => {
-  
   const { books, isLoading, error } = useBooks(
     searchMode,
     searchValue,
@@ -23,10 +22,7 @@ export const ResultSection = ({
   );
 
   return (
-    <section
-      id="resultSection"
-      className="container mx-auto max-w-3xl mt-2 mb-4 md:my-6 break-words"
-    >
+    <section className="container mx-auto max-w-3xl mt-2 mb-4 md:my-6 break-words">
       <h1 className="font-bold sm:w-10/12 mb-6 text-base md:text-lg text-center">
         Search results for{" "}
         <span>
@@ -36,9 +32,7 @@ export const ResultSection = ({
       </h1>
       <div className="w-full py-8 px-4">
         {!isLoading ? (
-          books.map((book) => (
-            <ResultSectionCard key={book.id} {...book} />
-          ))
+          books.map((book) => <ResultSectionCard key={book.id} {...book} />)
         ) : (
           <div className="flex items-center justify-center h-screen">
             <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500"></div>

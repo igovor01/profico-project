@@ -9,7 +9,6 @@ import SearchMode from "@/types/interfaces/SearchMode";
 import Image from "next/image";
 
 export default function Search() {
-
   const [results, setResults] = useState<BookInfo[]>([]);
   const [isResultSectionVisible, setResultSectionVisible] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -19,8 +18,9 @@ export default function Search() {
   });
 
   const toggleResultSection = () => {
-    if (!isResultSectionVisible)
+    if (!isResultSectionVisible) {
       setResultSectionVisible(!isResultSectionVisible);
+    }
   };
 
   return (
@@ -49,7 +49,6 @@ export default function Search() {
               width={450}
               alt="header picture"
               src="/assets/pixeltrue-seo.svg"
-              className=""
             />
             <p className="text-sm italic">
               Illustration by{" "}

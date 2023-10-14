@@ -19,7 +19,6 @@ export const SearchBar = ({
   toggleResultSection,
   setCurrentSearchMode,
 }: SearchBarProps) => {
-  
   const [input, setInput] = useState("");
   const [isOpen, toggleOpen] = useState(false);
   const [searchMode, setSearchMode] = useState<SearchMode>({
@@ -118,21 +117,14 @@ export const SearchBar = ({
         >
           <span>{capitalizeFirstLetter(searchMode.label)}</span>
           <FaChevronDown
-            className={
-              isOpen
-                ? "rotate-180 transition-all duration-500"
-                : "transition-all duration-500"
-            }
+            className={`transition-all duration-500 ${isOpen && "rotate-180"}`}
           />
         </div>
 
         <ul
-          className={
-            "absolute top-16 left-0 w-full rounded-2xl bg-white text-left overflow-hidden " +
-            (isOpen
-              ? "max-h-72 transition-all duration-500"
-              : "max-h-0 transition-all duration-500")
-          }
+          className={`absolute top-16 left-0 w-full rounded-2xl bg-white text-left overflow-hidden transition-all duration-500 ${
+            isOpen ? "max-h-72" : "max-h-0"
+          }`}
         >
           {SearchModeList.map((item) => (
             <li
