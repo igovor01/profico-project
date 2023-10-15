@@ -12,7 +12,7 @@ export const NavbarItems = [
     label: "My Books",
   },
   {
-    route: "/",
+    route: "/search",
     label: "Search",
   },
   {

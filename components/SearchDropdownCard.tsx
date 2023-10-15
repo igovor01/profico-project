@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BookInfo from "@/types/interfaces/BookInfo";
+import Link from "next/link";
 
 interface BookInfoProps {
   book: BookInfo;
@@ -8,7 +9,8 @@ interface BookInfoProps {
 
 export const SearchDropdownCard = ({ book, onClick }: BookInfoProps) => {
   return (
-    <div
+    <Link
+      href={`/book/${book.id}`}
       className="w-full py-2.5 px-5 text-start bg-white hover:bg-slate-200 flex flex-row py-4 cursor-pointer relative"
       onClick={() => onClick(book)}
     >
@@ -30,6 +32,6 @@ export const SearchDropdownCard = ({ book, onClick }: BookInfoProps) => {
           })}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
