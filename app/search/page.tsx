@@ -23,6 +23,8 @@ export default function Search() {
     }
   };
 
+  const doNothing = (book: BookInfo) => {};
+
   return (
     <>
       <section className="w-full h-fit flex flex-col lg:flex-row items-center justify-around relative bg-gradient-to-l from-amber-800 to-orange-950 py-7">
@@ -41,7 +43,9 @@ export default function Search() {
               toggleResultSection={toggleResultSection}
               setCurrentSearchMode={setSearchMode}
             />
-            {results && <SearchDropdown results={results} />}
+            {results && (
+              <SearchDropdown results={results} onClick={doNothing} />
+            )}
           </section>
 
           <div className="mt-6">
