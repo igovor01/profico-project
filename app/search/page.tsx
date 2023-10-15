@@ -29,8 +29,8 @@ export default function Search() {
     <>
       <section className="w-full h-fit flex flex-col lg:flex-row items-center justify-around relative bg-gradient-to-l from-amber-800 to-orange-950 py-7">
         <h1 className="relative text-white text-4xl text-center lg:text-start ml-9 mt-9 italic">
-          &quot;That's the thing about books. <br /> They let you travel without
-          moving your feet.&quot;
+          &apos;That's the thing about books. <br /> They let you travel without
+          moving your feet.&apos;
         </h1>
         <div className="w-max top-2.5 right-36 text-center flex flex-col items-center mr-20 mt-9">
           <h2 className="text-white text-2xl lg:text-3xl mt-5 mb-4">
