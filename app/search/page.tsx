@@ -36,7 +36,7 @@ export default function Search() {
           <h2 className="text-white text-2xl lg:text-3xl mt-5 mb-4">
             Find Your Book
           </h2>
-          <section className="">
+          <section>
             <SearchBar
               setSearchValue={setSearchValue}
               setResults={setResults}
