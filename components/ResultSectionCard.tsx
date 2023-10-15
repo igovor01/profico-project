@@ -13,7 +13,7 @@ export const ResultSectionCard = ({
   categories,
 }: BookInfo) => {
   return (
-    <article className="flex m-4 p-8 rounded-3xl flex-1 bg-gradient-to-b from-orange-100 to-white">
+    <article className="flex m-4 p-8 rounded-3xl flex-1 bg-gradient-to-b from-orange-100 to-gray-50">
       <Link href={`/book/${id}`}>
         <Image
           src={thumbnail}
