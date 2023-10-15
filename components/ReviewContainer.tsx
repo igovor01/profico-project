@@ -5,7 +5,7 @@ import Image from "next/image";
 import { StarContainer } from "./StarContainer";
 import Review from "@/types/interfaces/Review";
 
-export const ReviewContainer = ({ id, text, rating }: Review) => {
+export const ReviewContainer = ({ id, text, rating, book }: Review) => {
   const date: Date = new Date();
 
   const day: number = date.getDate();
@@ -18,7 +18,7 @@ export const ReviewContainer = ({ id, text, rating }: Review) => {
 
   return (
     <article
-      className="post-container w-full break-all bg-white rounded-md p-2.5 my-5"
+      className="post-container w-full break-all bg-white rounded-md p-2.5 my-5 shadow-xl"
       key={id}
     >
       <div className="user-profile flex items-center">
@@ -30,10 +30,10 @@ export const ReviewContainer = ({ id, text, rating }: Review) => {
           className="rounded-full mx-5 mt-2"
         />
         <div>
-          <div className="flex space-x-1.5">
-            <p className="font-semibold">Jane Doe</p>
-            <p>reviewed</p>
-            <p className="font-semibold">Book Title</p>
+          <div className="flex flex-wrap">
+            <p className="font-semibold mr-1.5">Jane Doe</p>
+            <p className="mr-1.5">reviewed</p>
+            <p className="font-semibold ">{book.title}</p>
           </div>
           <span className="text-sm">{currentDate}</span>
         </div>
@@ -43,28 +43,26 @@ export const ReviewContainer = ({ id, text, rating }: Review) => {
         <p className="post-text my-3.5 text-base">{text}</p>
         <div className="book-details border p-5 flex mt-5">
           <Image
-            src="/assets/images/book-1.jpg"
+            src={book.thumbnail}
             height={144}
             width={100}
             alt="book image"
             className="post-img mr-5 w-28 h-36 border border-orange-950 "
           />
           <div className="flex flex-col justify-items-start ">
-            <p> Book Title</p>
-            <p className="text-sm"> by Book Author</p>
+            <p> {book.title}</p>
+            <p className="text-sm">
+              {" "}
+              by{" "}
+              {book.authors &&
+                book.authors.map((author, index) => {
+                  return (index ? ", " : "") + author;
+                })}
+            </p>
             <button className="block my-2 w-36 px-2.5 py-1 rounded-md mr-5 bg-green-700 hover:bg-green-800 text-white hover:text-white transition duration-300 ease-in-out">
               Want to Read
             </button>
-            <p>
-              Little bit about this book, part of the synopsis.Little bit about
-              this book, part of the synopsis.Little bit about this book, part
-              of the synopsis.Little bit about this book, part of the
-              synopsis.Little bit about this book, part of the synopsis.Little
-              bit about this book, part of the synopsis.Little bit about this
-              book, part of the synopsis.Little bit about this book, part of the
-              synopsis.Little bit about this book, part of the synopsis.Little
-              bit about this book, part of the synopsis.
-            </p>
+            <p>{book.textSnippet}</p>
           </div>
         </div>
       </div>
