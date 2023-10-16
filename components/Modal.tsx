@@ -30,7 +30,9 @@ const Modal = ({ isVisible, onClose, children }: ModalSearchProps) => {
         >
           X
         </button>
-        <div className="bg-white p-2 rounded">{children}</div>
+        <div className="bg-white p-2 rounded flex flex-col items-center">
+          {children}
+        </div>
       </div>
     </div>
   );

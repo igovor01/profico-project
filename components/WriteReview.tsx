@@ -5,7 +5,7 @@ import { StarInputContainer } from "./StarInputContainer";
 import Modal from "./Modal";
 import SearchElements from "./SearchElements";
 import BookInfo from "@/types/interfaces/BookInfo";
-import { BookItems } from "@/config/BookItems";
+import useAuth from "@/hooks/useAuth";
 
 export interface WriteReviewProps {
   onSubmit: (text: string, rating: number, book: BookInfo) => void;
@@ -16,6 +16,9 @@ export const WriteReview: React.FC<WriteReviewProps> = ({ onSubmit }) => {
   const [rating, setRating] = useState<number>(0);
   const [showModal, setShowModal] = useState<Boolean>(false);
   const [selectedBook, setSelectedBook] = useState<BookInfo>();
+
+  const { user } = useAuth();
+  const imgSrc = user ? user.avatar : "/user-svg.svg";
 
   const handleBookSelected = (book: BookInfo) => {
     setSelectedBook(book);
@@ -52,14 +55,14 @@ export const WriteReview: React.FC<WriteReviewProps> = ({ onSubmit }) => {
       >
         <div className="user-profile flex items-center">
           <Image
-            src="/user-svg.svg"
+            src={imgSrc}
             alt="user image"
             width={32}
             height={32}
-            className="rounded-full mx-5 mt-2"
+            className="rounded-full mx-2 mt-2"
           />
           <div>
-            <p className="font-semibold">Jane Doe</p>
+            <p className="font-semibold">{user?.name}</p>
             <StarInputContainer rating={rating} setRating={setRating} />
           </div>
         </div>
