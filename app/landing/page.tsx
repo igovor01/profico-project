@@ -14,7 +14,7 @@ const Landing = () => {
     push("/signup");
   };
   return (
-    <div className="bg-orange-50 flex h-screen overflow-hidden justify-center">
+    <div className="bg-gradient-to-b from-orange-200 to-amber-50 flex h-screen overflow-hidden justify-center">
       <div className="flex-1 flex items-center justify-center">
         <div className="max-w-md p-16 space-y-6 bg-white shadow-lg rounded-lg">
           <h1 className="text-3xl font-bold text-gray-800">

@@ -58,14 +58,14 @@ const Login = () => {
   };
 
   return (
-    <section className="bg-slate-50 dark:bg-slate-900">
+    <section className="bg-gradient-to-b from-orange-200 to-amber-50 dark:bg-slate-900">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <a
           href="#"
           className="flex items-center mb-6 text-3xl font-semibold text-gray-900 dark:text-white"
         >
           <Image
-            src="/book-square-svgrepo-com.svg"
+            src="/app-icon.svg"
             alt="logo"
             width={50}
             height={50}

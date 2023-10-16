@@ -15,7 +15,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex px-60">
+    <div className="flex px-60 py-5 bg-gradient-to-b from-orange-200 to-amber-50">
       <CurrentlyReadingAside />
       <main className="w-2/3 p-8 ">
         <WriteReview onSubmit={handleAddPost} />

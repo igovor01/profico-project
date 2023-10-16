@@ -1,6 +1,7 @@
 "use client";
 import { FaRegHeart, FaRegComments, FaRegBookmark } from "react-icons/fa";
 import Image from "next/image";
+import useAuth from "@/hooks/useAuth";
 
 import { StarContainer } from "./StarContainer";
 import Review from "@/types/interfaces/Review";
@@ -16,14 +17,17 @@ export const ReviewContainer = ({ id, text, rating, book }: Review) => {
 
   let currentDate = `${day}.${month}.${year} ${hour}:${minute}`;
 
+  const { user } = useAuth();
+  const imgSrc = user ? user.avatar : "/user-svg.svg";
+
   return (
     <article
       className="post-container w-full break-all bg-white rounded-md p-2.5 my-5 shadow-xl"
       key={id}
     >
-      <div className="user-profile flex items-center">
+      <div className="user-profile flex items-center mt-1">
         <Image
-          src="/user-svg.svg"
+          src={imgSrc}
           alt="user image"
           width={32}
           height={32}
@@ -31,7 +35,7 @@ export const ReviewContainer = ({ id, text, rating, book }: Review) => {
         />
         <div>
           <div className="flex flex-wrap">
-            <p className="font-semibold mr-1.5">Jane Doe</p>
+            <p className="font-semibold mr-1.5">{user?.name}</p>
             <p className="mr-1.5">reviewed</p>
             <p className="font-semibold ">{book.title}</p>
           </div>
@@ -66,7 +70,7 @@ export const ReviewContainer = ({ id, text, rating, book }: Review) => {
           </div>
         </div>
       </div>
-      <div className="activity-icons flex items-center justify-start">
+      <div className="activity-icons flex items-center justify-start ml-6 mb-1">
         <div className="inline-flex items-center mr-7 text-base">
           <FaRegHeart className="w-4 mr-2.5"></FaRegHeart> <span>0</span>
         </div>
