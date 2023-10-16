@@ -2,6 +2,8 @@
 
 Aplikacija za pregled, pretraživanje, ocjenjivanje i kategoriziranje knjiga.
 
+https://roaring-pegasus-afe9f7.netlify.app/
+
 ## Features:
 
 - korisnički profil - korisnik svoj profil uređuje s obzirom na svoje preference i ima svoj zid gdje se izlistava njegova aktivnost i objave
